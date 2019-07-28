@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>70-480_03 SVG & Canvas</title>
+    <script src="javascript/graphics.js"></script>
+</head>
+<body>
+
+    <svg id="gg" height="260" width="300" onclick="changeColor()">
+        <defs>
+            <filter id="f1" x="0" y="0" width="150%" height="150%">
+                <feOffset result="offOut" in="SourceAlpha" dx="10" dy="10" />
+                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="2" />
+                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+            </filter>
+        </defs>
+        <circle class="gg-logo" cx="75" cy="75" r="50" fill="#FFD200" filter="url(#f1)"/>
+        <circle class="gg-logo" cx="100" cy="165" r="40" fill="#FFD200" filter="url(#f1)"/>
+        <circle class="gg-logo" cx="125" cy="23" r="20" fill="#FFD200" filter="url(#f1)"/>
+
+        <circle class="gg-logo" cx="180" cy="100" r="40" fill="#FFD200" filter="url(#f1)"/>
+        <circle class="gg-logo" cx="210" cy="190" r="50" fill="#FFD200" filter="url(#f1)"/>
+        <circle class="gg-logo" cx="225" cy="58" r="20" fill="#FFD200" filter="url(#f1)"/>
+    </svg>
+
+    <canvas id="gg-canvas" height="260" width="300" style="border:1px solid #0094ff" onclick="drawCanvas()"></canvas>
+    
+</body>
+</html>
